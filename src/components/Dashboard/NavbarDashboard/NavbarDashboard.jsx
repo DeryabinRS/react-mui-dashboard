@@ -1,16 +1,12 @@
-import styles from './Navbar.module.scss'
+import styles from './NavbarDashboard.module.scss'
 
 //ICONS FROM REACT ICONS
 import {
 	MdOutlineDashboard,
-	MdOutlineAnalytics,
-	MdOutlineFlag,
-	MdPeopleOutline,
-	MdOutlineMessage,
 	MdOutlineLogout
 } from 'react-icons/md';
-import { IoMdLogIn } from 'react-icons/io';
-import { FaReact, FaTimes } from 'react-icons/fa';
+import { RiPagesLine } from 'react-icons/ri';
+import { FaTimes } from 'react-icons/fa';
 import { BsThreeDots } from 'react-icons/bs';
 import { VscDashboard } from 'react-icons/vsc';
 
@@ -18,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 
-const Navbar = () => {
+const NavbarDashboard = () => {
 
     const [nav, setNav] = useState(false);
 
@@ -60,7 +56,7 @@ const Navbar = () => {
             {/* SUBMENU */}
             <ul className={styles.menu_container}>
                 <span className={styles.categories}>
-                    {nav ? "Pages" : <BsThreeDots />}
+                    {nav ? "Dashboard" : <BsThreeDots />}
                 </span>
 
                 <NavUrl
@@ -69,34 +65,9 @@ const Navbar = () => {
                     description="Dashboard"
                 />
                 <NavUrl
-                    url="/analytics"
-                    icon={<MdOutlineAnalytics/>}
-                    description="Analytics"
-                />
-                <NavUrl
-                    url="/campaings"
-                    icon={<MdOutlineFlag/>}
-                    description="Campaings"
-                />
-                <NavUrl
-                    url="/messages"
-                    icon={<MdOutlineMessage/>}
-                    description="Messages"
-                />
-
-                {/*SECOND CATEGORY*/}
-                <span className={`${styles.categories} ${styles.second_category}`}>
-                    {nav ? "More" : <BsThreeDots/>}
-                </span>
-                <NavUrl
-                    url="/other1"
-                    icon={<IoMdLogIn/>}
-                    description="Auth"
-                />
-                <NavUrl
-                    url="/other2"
-                    icon={<FaReact/>}
-                    description="Rect JS"
+                    url="/pages"
+                    icon={<RiPagesLine/>}
+                    description="Pages"
                 />
 
             </ul>
@@ -113,4 +84,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default NavbarDashboard
