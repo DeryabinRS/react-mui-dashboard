@@ -2,15 +2,14 @@
     --color_nav_bg:rgb(30,41,59);
     --color_nav_txt:rgb(100,115,139);
     --color_nav_ctg:rgb(226,232,240);
-    --color_nav_active:rgb(85,79,232);
+    --color_nav_active:#80be43;
     --color_nav_not_active:rgb(61,74,94);
     --color_nav_active_bg:rgb(15,23,42);
-    --nav-width: 16rem;
 
     background: var(--color_nav_bg);
     height: 100vh;
 
-    padding: var(--padding-md) var(--padding-sm); /*1rem 0.8rem*/
+    padding: 1rem 0.8rem; /*1rem 0.8rem*/
     transition: transform 300ms ease-in-out;
 
     //Mobile
@@ -20,6 +19,7 @@
         position: absolute;
         top:0;
         left: 0;
+        z-index: 10;
     }
 }
 
@@ -29,22 +29,13 @@
     }
 }
 
-.test{
-    position: fixed;
-    top: 0;
-    right: -90vw;
-    z-index: 10;
-    background: red;
-    color: yellow;
-}
-
 nav{
     position: relative;
-    width: var(--nav-width);
+    width: 16rem;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    
+    z-index: 1000;
     /*HIDE SCROLLBAR*/
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -60,6 +51,7 @@ nav{
     font-size: 2.2rem;
     display: flex;
     .logo_icon {
+        cursor: pointer;
         color: var(--color_nav_active);
     }
 
@@ -82,7 +74,7 @@ nav{
 }
 
 .menu_container{
-    margin-top: var(--margin-lg);
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -138,6 +130,10 @@ nav{
     svg{
         color: var(--color_nav_active);
     }
+}
+
+.li_navlink .submenu{
+    margin-left: 15px;
 }
 
 .btn_logout{

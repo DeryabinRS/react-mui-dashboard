@@ -36,7 +36,7 @@ const TopBarDashboard = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{background: "#888"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
